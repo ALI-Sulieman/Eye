@@ -1,0 +1,11 @@
+res://
+-characters
+|-shared
+|-player
+ |-player.tscn
+|-eye
+ |-eye.tscn
+
+-levels
+|-shared
+|-level_1

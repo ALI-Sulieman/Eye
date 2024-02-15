@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjnucoy1vmc3f"]
+
+[ext_resource type="PackedScene" uid="uid://d0hii824ov0rc" path="res://characters/eye/eye.tscn" id="1_cfi0n"]
+[ext_resource type="PackedScene" uid="uid://cixnjnctqgpyp" path="res://characters/player/player.tscn" id="2_g1smw"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Eye" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_cfi0n")]
+position = Vector2(528, 323)
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_g1smw")]
+position = Vector2(506, 117)
