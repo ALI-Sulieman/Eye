@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjnucoy1vmc3f"]
+[gd_scene load_steps=3 format=3 uid="uid://cjnucoy1vmc3f"]
 
 [ext_resource type="PackedScene" uid="uid://d0hii824ov0rc" path="res://characters/eye/eye.tscn" id="1_cfi0n"]
 [ext_resource type="PackedScene" uid="uid://cixnjnctqgpyp" path="res://characters/player/player.tscn" id="2_g1smw"]
-[ext_resource type="Texture2D" uid="uid://d0j7qv1enbv2q" path="res://icon.svg" id="3_4pog6"]
 
 [node name="Level1" type="Node2D"]
 
@@ -12,7 +11,3 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_g1smw")]
 position = Vector2(506, 117)
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(164, 127)
-texture = ExtResource("3_4pog6")
