@@ -33,8 +33,6 @@ func attack():
 	add_child(stone_instance)
 	attack_cooldown = true
 	attack_cooldown_timer.start()
-	
-
 
 func _on_attack_cooldown_timer_timeout():
 	attack_cooldown = false
