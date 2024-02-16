@@ -4,24 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://d0j7qv1enbv2q" path="res://icon.svg" id="1_fot5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_taxr8"]
-size = Vector2(60, 60)
+size = Vector2(128, 128)
 
 [node name="Eye" type="CharacterBody2D"]
 script = ExtResource("1_a5ab8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_taxr8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.639216, 0.337255, 1, 1)
 texture = ExtResource("1_fot5g")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_taxr8")
+
 [node name="Laser" type="RayCast2D" parent="."]
-target_position = Vector2(292, -1)
+target_position = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Laser"]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(30, 0)
+position = Vector2(128, 0)
 rotation = 1.5708
-scale = Vector2(0.03125, 0.5)
+scale = Vector2(0.05, 2)
 texture = ExtResource("1_fot5g")
+
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
