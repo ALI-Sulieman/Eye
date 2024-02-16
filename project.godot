@@ -15,6 +15,10 @@ run/main_scene="res://levels/level_1/level_1.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EngineSettings="*res://singletons/engine_settings.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
