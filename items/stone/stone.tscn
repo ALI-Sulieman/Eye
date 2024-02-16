@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://rqdmkp4x6l7u"]
+
+[ext_resource type="Script" path="res://items/stone/stone.gd" id="1_7dh0y"]
+[ext_resource type="Texture2D" uid="uid://d0j7qv1enbv2q" path="res://icon.svg" id="1_wju7m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlddo"]
+radius = 16.0
+
+[node name="Stone" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_7dh0y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8.34465e-07)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_wju7m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jlddo")
+
+[node name="DestructionTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DestructionTimer" to="." method="_on_destruction_timer_timeout"]
